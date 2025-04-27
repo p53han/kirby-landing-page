@@ -1,0 +1,16 @@
+{
+  "name": "hellokirby",
+  "version": "1.0.0",
+  "description": "<img src=\"http://getkirby.com/assets/images/github/starterkit.jpg\" width=\"300\">",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css",
+    "watch": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
