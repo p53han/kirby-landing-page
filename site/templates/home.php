@@ -1,61 +1,45 @@
-<?php
-/*
-  Templates render the content of your pages.
-
-  They contain the markup together with some control structures
-  like loops or if-statements. The `$page` variable always
-  refers to the currently active page.
-
-  To fetch the content from each field we call the field name as a
-  method on the `$page` object, e.g. `$page->title()`.
-
-  This home template renders content from others pages, the children of
-  the `photography` page to display a nice gallery grid.
-
-  Snippets like the header and footer contain markup used in
-  multiple templates. They also help to keep templates clean.
-
-  More about templates: https://getkirby.com/docs/guide/templates/basics
-*/
-
-?>
 <?php snippet('header') ?>
-  <?php snippet('intro') ?>
-  <?php
-  /*
-    We always use an if-statement to check if a page exists to
-    prevent errors in case the page was deleted or renamed before
-    we call a method like `children()` in this case
-  */
-  ?>
-  <?php if ($photographyPage = page('photography')): ?>
-  <ul class="home-grid">
-    <?php foreach ($photographyPage->children()->listed() as $album): ?>
-    <li>
-      <a href="<?= $album->url() ?>">
-        <figure>
-          <?php
-          /*
-            The `cover()` method defined in the `album.php`
-            page model can be used everywhere across the site
-            for this type of page
 
-            We can automatically resize images to a useful
-            size with Kirby's built-in image manipulation API
-          */
-          ?>
-          <?php if ($cover = $album->cover()): ?>
-          <img src="<?= $cover->resize(1024, 1024)->url() ?>" alt="<?= $cover->alt()->esc() ?>">
+<main>
+  <?php # Hero-Bereich ?>
+  <section class="hero bg-gray-100 py-12 md:py-20"> <?php # Hintergrund & Padding ?>
+    <div class="container mx-auto px-4"> <?php # Zentrierter Container ?>
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12"> <?php # Flexbox-Layout ?>
+
+        <?php # Spalte 1 Text ?>
+        <div class="w-full md:w-1/2 text-center md:text-left"> <?php # Breite & Ausrichtung ?>
+          <?php if ($page->hero_headline()->isNotEmpty()): ?>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+              <?= $page->hero_headline()->esc() ?>
+            </h1>
           <?php endif ?>
-          <figcaption>
-            <span>
-              <span class="example-name"><?= $album->title()->esc() ?></span>
-            </span>
-          </figcaption>
-        </figure>
-      </a>
-    </li>
-    <?php endforeach ?>
-  </ul>
-  <?php endif ?>
+
+          <?php if ($page->hero_text()->isNotEmpty()): ?>
+            <div class="text-lg text-gray-600 prose max-w-none"> <?php # Textgröße & Styling (prose für Fließtext) ?>
+              <?= $page->hero_text()->kt() // kt() wandelt KirbyText (z.B. Fettungen) in HTML um ?>
+            </div>
+          <?php endif ?>
+        </div>
+
+        <?php # Spalte 2 Bild ?>
+        <div class="w-full md:w-1/2">
+          <?php if ($heroImage = $page->hero_image()->toFile()): ?>
+            <img
+              src="<?= $heroImage->url() ?>"
+              alt="<?= $heroImage->alt()->esc() ?: $page->hero_headline()->esc() ?>" <?php // Alt-Text: Entweder aus Panel oder Headline ?>
+              class="rounded-lg shadow-lg w-full h-auto object-cover" <?php // Styling: Rund, Schatten, volle Breite ?>
+              <?php // Optional: Responsive Bildgrößen mit srcset ?>
+              <?php /* srcset="<?= $heroImage->srcset([ '800w' => ['width' => 800], '1200w' => ['width' => 1200] ]) ?>" */ ?>
+            >
+          <?php endif ?>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <?php # Hier kommen später die anderen Sektionen (Services, Kontakt) hin ?>
+
+</main>
+
 <?php snippet('footer') ?>
