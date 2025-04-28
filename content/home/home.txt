@@ -6,7 +6,7 @@ Hero-headline: Ash Ketchum
 
 ----
 
-Hero-text: Test
+Hero-text: Ash Ketchum aus Alabastia
 
 ----
 

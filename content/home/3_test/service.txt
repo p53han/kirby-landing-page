@@ -1,0 +1,13 @@
+Title: Test
+
+----
+
+Service-icon: - 'file://hoDEpdrYlZDUlqeO'
+
+----
+
+Service-text: ASd
+
+----
+
+Uuid: LIFnxfz2ahQjaJw2
