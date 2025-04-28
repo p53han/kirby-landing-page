@@ -1,0 +1,13 @@
+Title: Individuelle Webentwicklung
+
+----
+
+Service-icon: - 'file://3G2cUjT3sRCbb7Cl'
+
+----
+
+Service-text: Sie benötigen mehr als eine Standard-Website? Wir entwickeln maßgeschneiderte Webanwendungen, Online-Shops oder Schnittstellen, die genau auf Ihre Geschäftsprozesse zugeschnitten sind – performant, sicher und skalierbar.
+
+----
+
+Uuid: p7MZybFUzTNHNc5w

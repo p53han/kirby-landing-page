@@ -2,6 +2,18 @@ Title: Home
 
 ----
 
+Hero-headline: Ash Ketchum
+
+----
+
+Hero-text: Test
+
+----
+
+Hero-image: - 'file://MrDfCeRfUmm3Ed65'
+
+----
+
 Headline: Welcome to Kirby's Starterkit
 
 ----
