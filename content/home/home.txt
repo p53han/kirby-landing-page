@@ -6,7 +6,7 @@ Hero-headline: Ash Ketchum
 
 ----
 
-Hero-text: Ash Ketchum aus Alabastia
+Hero-text: Ash Ketchum (サトシ, Satoshi, geb. 22 Mai 1986) ist der Held aus dem Pokemon-Anime. Er ist (und bleibt) 10 Jahre alt und stammt aus einer Kleinstadt namens Alabastia in der Kanto-Region, in der er gemeinsam mit seiner Mutter Delia lebt. Der größte Traum von ihm ist es, ein Pokemon-Meister zu werden.
 
 ----
 
