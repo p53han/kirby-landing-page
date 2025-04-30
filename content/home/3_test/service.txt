@@ -6,7 +6,7 @@ Service-icon: - 'file://hoDEpdrYlZDUlqeO'
 
 ----
 
-Service-text: ASd
+Service-text: Pokem ipsum dolor sit amet Splash Flareon Ruby Vine Whip Stoutland Roselia. Sand-Attack Shuckle Frillish Ash's mother Zorua Plusle Piloswine. Sinnoh Umbreon Liepard Charizard Rhyhorn Growl Wartortle. Wartortle Finneon Primeape Vanilluxe Weavile to denounce the evils of truth and love Seadra. Earthquake Pignite Archen Accelgor Toxicroak Psychic Zephyr Badge.
 
 ----
 

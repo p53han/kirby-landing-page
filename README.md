@@ -1,43 +1,70 @@
-<img src="http://getkirby.com/assets/images/github/starterkit.jpg" width="300">
+# Einfache Landingpage mit Kirby CMS & Tailwind CSS
 
-**Kirby: the CMS that adapts to any project, loved by developers and editors alike.**
-The Starterkit is a full-blown Kirby installation with a lot of example content, blueprints, templates and more.
-It is ideal for new users to explore many of Kirby's options and get to know the Panel.
+Dies ist eine einfache Landingpage, erstellt als Übungsaufgabe, unter Verwendung von Kirby CMS für das Content Management und Tailwind CSS für das Styling.
 
-You can learn more about Kirby at [getkirby.com](https://getkirby.com).
+## Features / Umfang
 
-<img src="http://getkirby.com/assets/images/github/starterkit-screen.png" />
+Die Landingpage besteht aus folgenden Sektionen:
 
-### Try Kirby for free
+* **Hero-Bereich:** Einleitender Abschnitt mit Überschrift, Text und Bild. Inhalte sind über das Kirby Panel pflegbar. Layout mit Tailwind Grid implementiert.
+* **Services-Sektion:** Dynamische Auflistung von Leistungen (Titel, Icon als Bild-Upload, Text). Inhalte werden aus Unterseiten im Kirby Panel verwaltet/geladen.
+* **Kontaktformular:** Ermöglicht Besuchern das Senden einer Nachricht. Enthält:
+    * Felder: Vorname, Nachname, E-Mail, Nachricht.
+    * Frontend-Validierung (HTML5 `required`, `type="email"`).
+    * Backend-Validierung (PHP über Kirby Controller).
+    * E-Mail-Versand via PHP (Kirby Mailer, konfigurierbar via SMTP).
+    * Sicherheitsmaßnahmen: CSRF-Schutz, Honeypot-Feld.
+    * Weitere mögliche Sicherheitsmaßnahmen wären Rate-Limiting oder Captcha, bei ganz wichtigen daten auch eine WAF.
+* **Styling:** Modernes Styling und Layout mit Tailwind CSS v3.
+* **Basis-Layout:** Header und Footer mit Tailwind CSS gestylt.
 
-You can try Kirby and the Starterkit on your local machine or on a test server as long as you need to make sure it is the right tool for your next project. … and when you’re convinced, [buy your license](https://getkirby.com/buy).
+## Technologie-Stack
 
-The Starterkit is a demo of basic Kirby features. It's not recommended to be used "as is" in production. Please, follow our documentation closely for more features and guides on how to build secure, high-quality websites with Kirby.
+* **CMS:** Kirby CMS 
+* **Frontend Styling:** Tailwind CSS
+* **Backend:** PHP 8.1+
+* **Build-Prozess:** Node.js & npm
+* **Versionierung:** Git & GitHub
 
-While Kirby as the CMS software itself requires you to purchase a license, we consider the files primarily connected to this Starterkit (assets, templates, snippets...) free to use under the MIT license. Feel free to start building your own project with them.
+## Voraussetzungen
 
-### Get going
+* PHP >= 8.1 (Empfehlung für Kirby 4)
+* Node.js & npm (für Tailwind Build-Prozess)
+* Zum Beispiel ein lokaler Webserver (PHP Built-in Server, XAMPP, MAMP etc.) 
 
-Read our guide on [how to get started with Kirby](https://getkirby.com/docs/guide/quickstart).
+## Lokales Setup & Installation
 
-You can download the latest version of the Starterkit from https://download.getkirby.com/.
-If you are familiar with Git, you can clone Kirby's Starterkit repository from Github.
+1.  **Repository klonen:**
+    ```bash
+    git clone <URL_DEINES_GITHUB_REPOS> projekt-name
+    cd projekt-name
+    ```
+2.  **Frontend Abhängigkeiten:** Installiere die Node.js-Pakete (hauptsächlich Tailwind CSS):
+    ```bash
+    npm install
+    ```
+3.  **Tailwind CSS Build:**
+    * Für die Entwicklung (mit automatischer Neuerstellung bei Änderungen):
+        ```bash
+        npm run watch
+        ```
+    * Für einen einmaligen Build (z.B. für die Live-Version):
+        ```bash
+        npm run build
+        ```
+        
+5.  **Seite aufrufen:** Entweder einen lokalen Server aufsetzen oder die Dateien auf eine Websitendatenbank hochladen und die entsprechende Adresse eingeben.
 
-    git clone https://github.com/getkirby/starterkit.git
+6.  **Kirby Panel & Benutzer:**
+    * Greife auf das Panel zu: `deinewebadresse/panel`.
+    * Beim ersten Aufruf wirst du aufgefordert, einen Administrator-Account zu erstellen. Folge den Anweisungen.
 
-## What's Kirby?
+## Konfiguration
 
--   **[getkirby.com](https://getkirby.com)** – Get to know the CMS.
--   **[Try it](https://getkirby.com/try)** – Take a test ride with our online demo. Or download one of our kits to get started.
--   **[Documentation](https://getkirby.com/docs/guide)** – Read the official guide, reference and cookbook recipes.
--   **[Issues](https://github.com/getkirby/kirby/issues)** – Report bugs and other problems.
--   **[Feedback](https://feedback.getkirby.com)** – You have an idea for Kirby? Share it.
--   **[Forum](https://forum.getkirby.com)** – Whenever you get stuck, don't hesitate to reach out for questions and support.
--   **[Discord](https://chat.getkirby.com)** – Hang out and meet the community.
--   **[YouTube](https://youtube.com/kirbyCasts)** - Watch the latest video tutorials visually with Bastian.
--   **[Mastodon](https://mastodon.social/@getkirby)** – Spread the word.
--   **[Bluesky](https://bsky.app/profile/getkirby.com)** – Tell a friend.
----
+* **Kontaktformular E-Mail:**
+    * Die Empfänger-E-Mail-Adresse muss im Controller `site/controllers/home.php` in der `$kirby->email([...])`-Konfiguration angepasst werden (`'to' => 'deinemail@example.com'`).
+    * Die Absender-Adresse (`'from'`) muss ebenfalls angepasst werden und sollte eine gültige Adresse sein.
 
-© 2009 Bastian Allgeier
-[getkirby.com](https://getkirby.com) · [License agreement](https://getkirby.com/license)
+## Autor
+
+* **Alexander Schalk**
