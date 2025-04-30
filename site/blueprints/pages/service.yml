@@ -1,0 +1,35 @@
+# site/blueprints/pages/service.yml
+#@author Alexander Schalk
+title: Service
+
+icon: sparkles
+
+# Status Optionen
+status:
+  draft:
+    label: Entwurf
+    text: Die Leistung wird auf der Webseite noch nicht angezeigt.
+  listed:
+    label: Veröffentlicht
+    text: Die Leistung wird auf der Webseite angezeigt.
+
+# Service-Felder
+fields:
+  service_icon:
+    label: service_icon
+    type: files
+    max: 1
+    layout: cards
+    size: small
+    image: 
+      ratio: 1/1
+      cover: true
+      uploads:
+        template: image
+    help: "Ihr Bild hier einfügen (z. Bsp. SVG)"
+    width: 1/2
+
+  service_text:
+    label: Service Beschreibung
+    type: textarea
+    size: small

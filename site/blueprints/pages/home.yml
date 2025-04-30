@@ -1,12 +1,9 @@
-# Each page blueprint must have a title, the title may be different from the file name
+# @author   Alexander Schalk
 title: Home
 
 # Each page can have an icon that is shown in page listings when no preview image is available.
 icon: 🏠
 
-# Page options allow you to control how users can interact with the page.
-# Here we prevent changing the page status (the home page cannot be renamed or deleted by default)
-# More about page options: https://getkirby.com/docs/reference/panel/blueprints/page#options
 options:
   changeStatus: false
 
@@ -16,23 +13,33 @@ tabs:
     label: Seiteninhalt
     columns:
       main:
-        width: 2/3
+        width: 3/3
         sections:
           hero_section:
             type: fields
             fields:
               hero_headline:
-                label: Hero: Überschrift
+                label: "Hero: Überschrift"
                 type: text
               hero_text:
-                label: Hero: Text
+                label: "Hero: Text"
                 type: textarea
                 size: medium
               hero_image:
-                label: Hero: Bild
+                label: "Hero: Bild"
                 type: files
                 max: 1                 
                 layout: cards          
                 image:                 
                   ratio: 16/9          
                   cover: true
+          services:
+            headline: Leistungen
+            type: pages              
+            template: service        
+            info: "{{ page.service_icon }}" 
+            layout: cards            
+            image:                   
+              query: page.hero_image.toFile
+              cover: true
+              ratio: 1/1

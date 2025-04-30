@@ -1,0 +1,15 @@
+# site/blueprints/files/default.yml
+#@author Alexander Schalk
+title: Datei
+
+
+accept:
+  mime: image/jpeg, image/png, image/gif, image/svg+xml
+
+# Felder zum Bearbeiten der Datei-Metadaten
+fields:
+  alt:
+    label: Alternativtext
+    type: text
+    help: "Kurze Beschreibung des Bildinhalts (wichtig für SEO & Barrierefreiheit)."
+    width: 1/1 
