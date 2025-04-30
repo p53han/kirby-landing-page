@@ -2,7 +2,7 @@
 // @author ALexander Schalk
 // site/snippets/sections/services.php
 
-$services = $page->children()->listed()->filterBy('template', 'service');
+$services = $page->children()->filterBy('template', 'service'); // Nur nach Template filtern
 
 if ($services->isNotEmpty()):
 ?>
@@ -15,7 +15,7 @@ if ($services->isNotEmpty()):
         <div class="service-item p-6 text-center border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
 
           <?php
-          $iconFile = $service->service_image_icon()->toFile();
+          $iconFile = $service->service_icon()->toFile();
 
           if ($iconFile):
           ?>

@@ -24,8 +24,8 @@ fields:
     image: 
       ratio: 1/1
       cover: true
-      uploads:
-        template: image
+    uploads:
+      template: image
     help: "Ihr Bild hier einfügen (z. Bsp. SVG)"
     width: 1/2
 

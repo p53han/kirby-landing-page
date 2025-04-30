@@ -1,9 +1,6 @@
 #@author Alexander Schalk
 columns:
-  - width: 1/2
-    sections:
-      
-  - width: 1/2
+  - width: 1/1
     sections:
       pages:
         type: pages

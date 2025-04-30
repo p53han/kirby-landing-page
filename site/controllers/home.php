@@ -66,7 +66,7 @@ return function (Kirby $kirby, $page) {
                     
                     $kirby->email([
                         'to'      => 'pokelex@mail.de',
-                        'from'    => 'pokelex.de,
+                        'from'    => 'noreply@pokelex.de,',
                         'replyTo' => $data['email'],           
                         'subject' => 'Kontaktformular: Neue Anfrage von ' . $data['first_name'] . ' ' . $data['last_name'],
                         'body'    => $emailBody
