@@ -65,6 +65,3 @@ Die Landingpage besteht aus folgenden Sektionen:
     * Die Empfänger-E-Mail-Adresse muss im Controller `site/controllers/home.php` in der `$kirby->email([...])`-Konfiguration angepasst werden (`'to' => 'deinemail@example.com'`).
     * Die Absender-Adresse (`'from'`) muss ebenfalls angepasst werden und sollte eine gültige Adresse sein.
 
-## Autor
-
-* **Alexander Schalk**
